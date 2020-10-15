@@ -1,0 +1,5 @@
+Dataofpower=read.table(file = "D:/75e/IFMR/R project/household_power_consumption.txt",sep = ";",header = T)
+subsetofpower=subset(Dataofpower,Dataofpower$Date=="1/2/2007"|Dataofpower$Date=="2/2/2007")
+subsetofpower$Date=as.Date(subsetofpower$Date,format = "%d/%m/%y")
+subsetofpower$Time=strptime(subsetofpower$Time,format = "%H:%M:%S")
+plot(subsetofpower$Time,as.numeric(as.character(subsetofpower$Global_active_power)),type="l",xlab="",ylab="Global Active Power (kilowatts)")

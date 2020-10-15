@@ -1,0 +1,7 @@
+Dataofpower=read.table(file = "D:/75e/IFMR/R project/household_power_consumption.txt",sep = ";",header = T)
+head(Dataofpower)
+tail(Dataofpower)
+subsetofpower=subset(Dataofpower,Dataofpower$Date=="1/2/2007"|Dataofpower$Date=="2/2/2007")
+head(subsetofpower)
+tail(subsetofpower)
+hist(as.numeric(as.character(subsetofpower$Global_active_power)),col="red",main = "Global Active Power", xlab = "Global active power in KW")
